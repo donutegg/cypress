@@ -19,6 +19,7 @@ export function handle (shouldExitCb?: (err: Error) => boolean) {
   }
 
   process.removeAllListeners('unhandledRejection')
+  // @ts-expect-error missing unhandledRejection here
   process.once('unhandledRejection', globalExceptionHandler)
   process.removeAllListeners('uncaughtException')
   process.once('uncaughtException', globalExceptionHandler)

@@ -19,7 +19,7 @@ export class SocketAllowed {
     const { localPort } = socket
 
     debug('allowing socket %o', { localPort })
-    this.allowedLocalPorts.push(localPort as number)
+    this.allowedLocalPorts.push(localPort)
 
     socket.once('close', () => {
       debug('allowed socket closed, removing %o', { localPort })
