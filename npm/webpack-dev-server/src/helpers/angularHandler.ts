@@ -260,33 +260,28 @@ async function getAngularCliWebpackConfig (devServerConfig: AngularWebpackDevSer
     buildOptions,
     context,
     (wco: any) => {
-      // Starting in Angular 16, the `getStylesConfig` function returns a `Promise`.
-      // We wrap it with `Promise.resolve` so we support older version of Angular
-      // returning a non-Promise result.
-      const stylesConfig = Promise.resolve(getStylesConfig(wco)).then((config) => {
-        // We modify resolve-url-loader and set `root` to be `projectRoot` + `sourceRoot` to ensure
-        // imports in scss, sass, etc are correctly resolved.
-        // https://github.com/cypress-io/cypress/issues/24272
-        config.module.rules.forEach((rule: RuleSetRule) => {
-          rule.rules?.forEach((ruleSet) => {
-            if (!Array.isArray(ruleSet.use)) {
+      const stylesConfig = getStylesConfig(wco)
+
+      // We modify resolve-url-loader and set `root` to be `projectRoot` + `sourceRoot` to ensure
+      // imports in scss, sass, etc are correctly resolved.
+      // https://github.com/cypress-io/cypress/issues/24272
+      stylesConfig.module.rules.forEach((rule: RuleSetRule) => {
+        rule.rules?.forEach((ruleSet) => {
+          if (!Array.isArray(ruleSet.use)) {
+            return
+          }
+
+          ruleSet.use.map((loader) => {
+            if (typeof loader !== 'object' || typeof loader.options !== 'object' || !loader.loader?.includes('resolve-url-loader')) {
               return
             }
 
-            ruleSet.use.map((loader) => {
-              if (typeof loader !== 'object' || typeof loader.options !== 'object' || !loader.loader?.includes('resolve-url-loader')) {
-                return
-              }
+            const root = projectConfig.buildOptions.workspaceRoot || path.join(devServerConfig.cypressConfig.projectRoot, projectConfig.sourceRoot)
 
-              const root = projectConfig.buildOptions.workspaceRoot || path.join(devServerConfig.cypressConfig.projectRoot, projectConfig.sourceRoot)
-
-              debug('Adding root %s to resolve-url-loader options', root)
-              loader.options.root = root
-            })
+            debug('Adding root %s to resolve-url-loader options', root)
+            loader.options.root = root
           })
         })
-
-        return config
       })
 
       return [getCommonConfig(wco), stylesConfig]

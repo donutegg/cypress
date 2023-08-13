@@ -5,7 +5,6 @@
       "cloudProject": {
         "__typename": "CloudProject",
         "id": "cloud-project-test-id",
-        "cloudProjectUrl": "https://cloud.cypress.io/projects/vgqrwp",
         "runByNumber": {
           "id": "Q2xvdWRSdW46TUdWZXhvQkRPNg==",
           "runNumber": 136,

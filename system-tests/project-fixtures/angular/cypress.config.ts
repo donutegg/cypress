@@ -3,7 +3,6 @@ import { defineConfig } from 'cypress'
 export default defineConfig({
   component: {
     experimentalSingleTabRunMode: true,
-    videoCompression: false, // turn off video compression for CI
     devServer: {
       framework: 'angular',
       bundler: 'webpack',
@@ -11,7 +10,6 @@ export default defineConfig({
         resolve: {
           alias: {
             '@angular/common/http': require.resolve('@angular/common/http'),
-            '@angular/common/testing': require.resolve('@angular/common/testing'),
             '@angular/common': require.resolve('@angular/common'),
             '@angular/core/testing': require.resolve('@angular/core/testing'),
             '@angular/core': require.resolve('@angular/core'),

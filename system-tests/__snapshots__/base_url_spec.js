@@ -39,6 +39,14 @@ exports['e2e baseUrl / https / passes'] = `
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/base_url.cy.js.mp4
+
+
 ====================================================================================================
 
   (Run Finished)
@@ -92,6 +100,14 @@ exports['e2e baseUrl / http / passes'] = `
   │ Duration:     X seconds                                                                        │
   │ Spec Ran:     base_url.cy.js                                                                   │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/base_url.cy.js.mp4
 
 
 ====================================================================================================
