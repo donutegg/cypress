@@ -366,7 +366,6 @@ describe('e2e network error handling', function () {
     it('baseurl check tries 5 times in run mode', function () {
       return systemTests.exec(this, {
         config: {
-          videoCompression: false,
           baseUrl: 'http://never-gonna-exist.invalid',
         },
         snapshot: true,
@@ -429,7 +428,6 @@ describe('e2e network error handling', function () {
           spec: 'https_passthru.cy.js',
           snapshot: true,
           config: {
-            videoCompression: false,
             baseUrl: `https://localhost:${HTTPS_PORT}`,
           },
         })
@@ -458,7 +456,6 @@ describe('e2e network error handling', function () {
           spec: 'network_error_304_handling.cy.js',
           video: false,
           config: {
-            videoCompression: false,
             pageLoadTimeout: 4000,
             baseUrl: `http://localhost:${PORT}`,
           },
@@ -479,7 +476,6 @@ describe('e2e network error handling', function () {
             spec: 'network_error_304_handling.cy.js',
             video: false,
             config: {
-              videoCompression: false,
               pageLoadTimeout: 4000,
               baseUrl: `http://localhost:${PORT}`,
             },
@@ -507,7 +503,6 @@ describe('e2e network error handling', function () {
           spec: 'network_error_304_handling.cy.js',
           video: false,
           config: {
-            videoCompression: false,
             pageLoadTimeout: 4000,
             baseUrl: `http://localhost:${PORT}`,
           },

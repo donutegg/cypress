@@ -134,6 +134,14 @@ exports['testConfigOverrides / fails when setting invalid config opt with Cypres
       run 2 (failed).png                                                                            
 
 
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/invalid_before_test_event.js.mp4
+
+
 ====================================================================================================
 
   (Run Finished)
@@ -208,6 +216,14 @@ exports['testConfigOverrides / fails when setting invalid config opt with Cypres
       (failed).png                                                                                  
   -  /XXX/XXX/XXX/cypress/screenshots/invalid_before_test_async_event.js/nested -- do     (1280x720)
      es not run 2 (failed).png                                                                      
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/invalid_before_test_async_event.js.mp4
 
 
 ====================================================================================================
@@ -814,6 +830,14 @@ exports['testConfigOverrides / has originalTitle when skipped due to browser con
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/skip-browser.js.mp4
+
+
 ====================================================================================================
 
   (Run Finished)
@@ -871,6 +895,14 @@ exports['testConfigOverrides / maintains runnable body when skipped due to brows
   │ Duration:     X seconds                                                                        │
   │ Spec Ran:     skip-browser.js                                                                  │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/skip-browser.js.mp4
 
 
 ====================================================================================================

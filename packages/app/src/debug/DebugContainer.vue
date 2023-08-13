@@ -31,7 +31,6 @@
           :runs="allRuns"
           :current-run-number="run.runNumber"
           :current-commit-info="currentCommitInfo"
-          :cloud-project-url="cloudProject?.cloudProjectUrl"
         />
 
         <DebugPageHeader

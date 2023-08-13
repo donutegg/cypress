@@ -76,6 +76,14 @@ exports['e2e cookies with baseurl'] = `
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/cookies_spec_baseurl.cy.js.mp4
+
+
 ====================================================================================================
 
   (Run Finished)
@@ -133,6 +141,14 @@ exports['e2e cookies with no baseurl'] = `
   │ Duration:     X seconds                                                                        │
   │ Spec Ran:     cookies_spec_no_baseurl.cy.js                                                    │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: X second(s)                                                
+
+  -  Video output: /XXX/XXX/XXX/cypress/videos/cookies_spec_no_baseurl.cy.js.mp4
 
 
 ====================================================================================================
