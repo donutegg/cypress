@@ -1004,11 +1004,6 @@ describe('lib/cypress', () => {
             close: sinon.stub().resolves(),
           }
 
-          const cdpAutomation = {
-            _handlePausedRequests: sinon.stub().resolves(),
-            _listenForFrameTreeChanges: sinon.stub().returns(),
-          }
-
           sinon.stub(chromeBrowser, '_writeExtension').resolves()
 
           sinon.stub(BrowserCriClient, 'create').resolves(browserCriClient)
@@ -1019,7 +1014,7 @@ describe('lib/cypress', () => {
           sinon.stub(chromeBrowser, '_handleDownloads').resolves()
           sinon.stub(chromeBrowser, '_recordVideo').resolves()
 
-          sinon.stub(chromeBrowser, '_setAutomation').returns(cdpAutomation)
+          sinon.stub(chromeBrowser, '_setAutomation').returns()
 
           return cypress.start([
             `--run-project=${this.pluginBrowser}`,
@@ -1051,9 +1046,6 @@ describe('lib/cypress', () => {
 
             expect(BrowserCriClient.create).to.have.been.calledOnce
             expect(browserCriClient.attachToTargetUrl).to.have.been.calledOnce
-
-            expect(cdpAutomation._handlePausedRequests).to.have.been.calledOnce
-            expect(cdpAutomation._listenForFrameTreeChanges).to.have.been.calledOnce
           })
         })
 
@@ -1067,7 +1059,6 @@ describe('lib/cypress', () => {
           const browserCriClient = {
             ensureMinimumProtocolVersion: sinon.stub().resolves(),
             attachToTargetUrl: sinon.stub().resolves(criClient),
-            currentlyAttachedTarget: criClient,
             close: sinon.stub().resolves(),
           }
 
